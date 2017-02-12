@@ -20,6 +20,9 @@ public class JavaEscritorio {
         // TODO code application logic here
         
         ConexionDAO.getConnection();
+        {
+            //ASasas
+        }
     }
     
 }
