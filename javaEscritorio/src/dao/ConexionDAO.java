@@ -17,7 +17,7 @@ import java.sql.SQLException;
 
 public class ConexionDAO {
     private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String url = "jdbc:sqlserver://192.168.1.14\\MSSQL:1433;databaseName=prueba";
+    private static String url = "jdbc:sqlserver://192.168.1.5\\MSSQL:1433;databaseName=prueba";
     private static String usuario = "sa";
     private static String clave = "123456";
     

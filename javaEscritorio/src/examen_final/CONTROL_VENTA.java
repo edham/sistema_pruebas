@@ -30,7 +30,7 @@ DefaultTableModel modelo=new DefaultTableModel();
      private void Conexion(){
         try{
             String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-            String url="jdbc:sqlserver://192.168.1.14:1433;databasename=prueba";
+            String url="jdbc:sqlserver://192.168.1.5:1433;databasename=prueba";
             Class.forName(driver);
             cn=DriverManager.getConnection(url,"sa","123456");
             st=cn.createStatement(ResultSet. TYPE_SCROLL_SENSITIVE,
