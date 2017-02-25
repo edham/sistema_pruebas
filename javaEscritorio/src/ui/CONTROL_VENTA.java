@@ -73,7 +73,7 @@ private TablaVentaDetalleN modelo=new TablaVentaDetalleN();
                 int id=clsReglasNegocio.insertarVenta(entidad);
                 if(id>0)
                 {
-                    JOptionPane.showMessageDialog(rootPane,"LA VENTA SE GRABO CORRECTAMENTE");
+                    JOptionPane.showMessageDialog(rootPane,"LA VENTA SE GRABO CORRECTAMENTE CON EL CODIGO : "+id);
                    
                     Limpiar();
                 }
@@ -114,6 +114,9 @@ private TablaVentaDetalleN modelo=new TablaVentaDetalleN();
                     if (i == 0)        
                     {
                         modelo.remover(index);
+                        txtIGV.setText(""+modelo.getIgv());
+                        txtSubTotal.setText(""+modelo.getSubTotal());
+                        txtTotal.setText(""+modelo.getTotal());
                     }
                 }
             }
