@@ -12,6 +12,8 @@ import entidades.clsClienteN;
 import entidades.clsProductoN;
 import entidades.clsVentaN;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,9 +22,14 @@ import java.util.List;
 public class clsReglasNegocio {
 
 //<editor-fold defaultstate="collapsed" desc="clsClienteN">
-    public static List<clsClienteN> ListarCliente(String filtro) throws Exception
+    public static List<clsClienteN> ListarCliente(String filtro) 
     {
-        return clsClienteNDAO.Listar(filtro);
+        try {
+            return clsClienteNDAO.Listar(filtro);
+        } catch (Exception ex) {
+            Logger.getLogger(clsReglasNegocio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
     
     public static clsClienteN buscarCliente(int id) throws Exception

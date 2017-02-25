@@ -166,23 +166,23 @@ public class clsVentaNDAO {
             
             if (rs.next()){
                 rpta=rs.getInt(1);
-                for(clsVentaDetalleN itens:entidad.getListaItems())
+                for(clsVentaDetalleN obejto:entidad.getListaItems())
                 {
                     sql="INSERT INTO VENTA_DETALLE_N(COSTO,CANTIDAD,TOTAL,COD_PROD,NUN_VEN)"
                             + " VALUES(?,?,?,?,?);";
                     PreparedStatement detalleInserta = conn.prepareStatement(sql);
-                    detalleInserta.setDouble(1, itens.getCosto());
-                    detalleInserta.setInt(2,itens.getCantidad());
-                    detalleInserta.setDouble(3, itens.getTotal());
-                    detalleInserta.setInt(4, itens.getObjProductoN().getCod_prod());
+                    detalleInserta.setDouble(1, obejto.getCosto());
+                    detalleInserta.setInt(2,obejto.getCantidad());
+                    detalleInserta.setDouble(3, obejto.getTotal());
+                    detalleInserta.setInt(4, obejto.getObjProductoN().getCod_prod());
                     detalleInserta.setInt(5, rpta);
                     detalleInserta.executeUpdate();                    
                     detalleInserta.close();
                     
                      sql="UPDATE PRODUCTO_N SET STOCK=STOCK-? WHERE COD_PROD = ?;";
                     PreparedStatement detalleUpdate = conn.prepareStatement(sql);
-                    detalleUpdate.setInt(1,itens.getCantidad());
-                    detalleUpdate.setInt(2,itens.getObjProductoN().getCod_prod());
+                    detalleUpdate.setInt(1,obejto.getCantidad());
+                    detalleUpdate.setInt(2,obejto.getObjProductoN().getCod_prod());
                     detalleUpdate.executeUpdate();                    
                     detalleUpdate.close();
                     
