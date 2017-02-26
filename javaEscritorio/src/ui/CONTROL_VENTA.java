@@ -34,7 +34,7 @@ private TablaVentaDetalleN modelo=new TablaVentaDetalleN();
                 DefaultComboBoxModel cmodelo=new DefaultComboBoxModel();
                 cmodelo.removeAllElements();
                 cmodelo.addElement("Seleccione una Opcción");
-                for(clsProductoN entidad: clsReglasNegocio.ListarProducto(""))
+                for(clsProductoN entidad: clsReglasNegocio.ListarProducto("2"))
                 {
                     cmodelo.addElement(entidad);
                 }               

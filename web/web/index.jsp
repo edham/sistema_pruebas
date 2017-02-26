@@ -18,6 +18,7 @@
         <h1>Hello World!</h1>
         
      <%
+         
         for(clsClienteN entidad :clsReglasNegocio.ListarCliente(""))
             out.append(entidad.getNom_cli());
             
